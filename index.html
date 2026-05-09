@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Transition - AI转型之路</title>
-  <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css">
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="reveal">
@@ -232,8 +229,12 @@
     </div>
   </div>
 
-  <script src="node_modules/reveal.js/dist/reveal.js"></script>
-  <script>
+  <script type="module">
+    import Reveal from 'reveal.js';
+    import 'reveal.js/dist/reveal.css';
+    import 'reveal.js/dist/theme/black.css';
+    import './styles.css';
+
     Reveal.initialize({
       hash: true,
       controls: true,
@@ -247,7 +248,6 @@
       autoAnimateDuration: 800,
     });
 
-    // Custom animation for data-animate elements
     Reveal.on('slidechanged', event => {
       const animatedElements = event.currentSlide.querySelectorAll('[data-animate]');
       animatedElements.forEach((el, index) => {
